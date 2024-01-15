@@ -1,9 +1,17 @@
-import Test from "./components/Test";
+import AccountsCard from "./components/AccountsCard";
+import BudgetCard from "./components/BudgetCard";
+import Navbar from "./components/Navbar";
+import NetWorthCard from "./components/NetWorthCard";
+import SpendingCard from "./components/SpendingCard";
 
 function App() {
   return (
     <>
-      <Test />
+      <Navbar />
+      <AccountsCard />
+      <BudgetCard />
+      <NetWorthCard />
+      <SpendingCard />
     </>
   );
 }
