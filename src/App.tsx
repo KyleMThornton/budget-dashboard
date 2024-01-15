@@ -8,10 +8,20 @@ function App() {
   return (
     <>
       <Navbar />
-      <AccountsCard />
-      <BudgetCard />
-      <NetWorthCard />
-      <SpendingCard />
+      <div className="flex justify-center items-center">
+        <div className="w-5/6 m-10 flex lg:flex-row flex-col">
+          <div className="m-4">
+            <BudgetCard />
+            <SpendingCard />
+          </div>
+          <div className="m-4">
+            <AccountsCard />
+          </div>
+          <div className="m-4">
+            <NetWorthCard />
+          </div>
+        </div>
+      </div>
     </>
   );
 }
