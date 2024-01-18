@@ -6,7 +6,7 @@ import SpendingCard from "./components/SpendingCard";
 
 function App() {
   return (
-    <div className="bg-zinc-100">
+    <div>
       <Navbar />
       <div className="flex justify-center items-center">
         <div className="w-5/6 m-10 flex lg:flex-row flex-col">
