@@ -34,7 +34,7 @@ export default function SpendingCard() {
 
   return (
     <Card
-      className="max-w-md mx-auto m-1 mt-3"
+      className="max-w-lg mx-auto m-1 mt-3"
       decoration="top"
       decorationColor="teal"
     >
