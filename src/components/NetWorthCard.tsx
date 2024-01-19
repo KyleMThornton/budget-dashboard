@@ -1,32 +1,37 @@
 import { Card, Title, Text, LineChart } from "@tremor/react";
 import { useState } from "react";
 
-const netWorthData = [
-  {
-    year: 2020,
-    "Net Worth": 150000,
-  },
-  {
-    year: 2021,
-    "Net Worth": 250000,
-  },
-  {
-    year: 2022,
-    "Net Worth": 200000,
-  },
-  {
-    year: 2023,
-    "Net Worth": 300000,
-  },
-];
+interface NetWorthCardProps {
+  netWorth2023: number;
+}
 
-export default function NetWorthCard() {
+export default function NetWorthCard(NetWorthCardProps: NetWorthCardProps) {
+  const netWorthData = [
+    {
+      year: 2020,
+      "Net Worth": 100000,
+    },
+    {
+      year: 2021,
+      "Net Worth": 125000,
+    },
+    {
+      year: 2022,
+      "Net Worth": 100000,
+    },
+    {
+      year: 2023,
+      "Net Worth": NetWorthCardProps.netWorth2023,
+    },
+  ];
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [value, setValue] = useState(null);
 
   return (
     <>
       <Card
-        className="max-w-md mx-auto m-1"
+        className="max-w-lg mx-auto m-1"
         decoration="top"
         decorationColor="teal"
       >

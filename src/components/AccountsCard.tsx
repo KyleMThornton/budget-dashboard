@@ -11,20 +11,32 @@ import {
   Subtitle,
 } from "@tremor/react";
 
-export default function AccountsCard() {
-  let checkingBalance = 1000000;
-  let savingsBalance = 1000000;
-  let creditCard1Balance = 1000000;
-  let creditCard2Balance = 1000000;
-  let mortgageBalance = 1000000;
-  let investmentBalance = 1000000;
-  let retirementBalance = 1000000;
-  let homeValue = 1000000;
-  let personalLoanBalance = 1000000;
+interface AccountsCardProps {
+  checkingBalance: number;
+  savingsBalance: number;
+  creditCard1Balance: number;
+  creditCard2Balance: number;
+  mortgageBalance: number;
+  investmentBalance: number;
+  retirementBalance: number;
+  homeValue: number;
+  personalLoanBalance: number;
+}
+
+export default function AccountsCard(AccountsCardProps: AccountsCardProps) {
+  const checkingBalance = AccountsCardProps.checkingBalance;
+  const savingsBalance = AccountsCardProps.savingsBalance;
+  const creditCard1Balance = AccountsCardProps.creditCard1Balance;
+  const creditCard2Balance = AccountsCardProps.creditCard2Balance;
+  const mortgageBalance = AccountsCardProps.mortgageBalance;
+  const investmentBalance = AccountsCardProps.investmentBalance;
+  const retirementBalance = AccountsCardProps.retirementBalance;
+  const homeValue = AccountsCardProps.homeValue;
+  const personalLoanBalance = AccountsCardProps.personalLoanBalance;
 
   return (
     <Card
-      className="max-w-md mx-auto m-1"
+      className="max-w-lg mx-auto m-1"
       decoration="top"
       decorationColor="teal"
     >
