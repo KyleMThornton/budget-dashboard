@@ -19,7 +19,7 @@ function App() {
   const [incomeActual, setincomeActual] = useState(100);
   const [expensesBudgeted, setexpensesBudgeted] = useState(100);
   const [expensesActual, setexpensesActual] = useState(100);
-  const [netWorth2023, setnetWorth2023] = useState(100000);
+  const [netWorth2023, setnetWorth2023] = useState(150000);
 
   return (
     <main className="bg-slate-100 flex flex-col items-center">
