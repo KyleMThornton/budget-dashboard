@@ -4,32 +4,43 @@ import { useState } from "react";
 const chartdata2 = [
   {
     date: "Day 1",
-    "2022": 100,
-    "2023": 78,
+    "Last Week": 100,
+    "This Week": 58,
+  },
+  {
+    date: "Day 2",
+    "Last Week": 125,
+    "This Week": 71,
   },
   {
     date: "Day 3",
-    "2022": 125,
-    "2023": 71,
+    "Last Week": 125,
+    "This Week": 71,
+  },
+  {
+    date: "Day 4",
+    "Last Week": 178,
+    "This Week": 71,
   },
   {
     date: "Day 5",
-    "2022": 125,
-    "2023": 71,
+    "Last Week": 200,
+    "This Week": 171,
+  },
+  {
+    date: "Day 6",
+    "Last Week": 250,
+    "This Week": 191,
   },
   {
     date: "Day 7",
-    "2022": 178,
-    "2023": 71,
-  },
-  {
-    date: "Day 9",
-    "2022": 200,
-    "2023": 71,
+    "Last Week": 260,
+    "This Week": 271,
   },
 ];
 
 export default function SpendingCard() {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [value, setValue] = useState(null);
 
   return (
@@ -43,10 +54,9 @@ export default function SpendingCard() {
         className="h-72 mt-4"
         data={chartdata2}
         index="date"
-        categories={["2022", "2023"]}
+        categories={["Last Week", "This Week"]}
         colors={["neutral", "indigo"]}
         yAxisWidth={30}
-        onValueChange={(v) => setValue(v)}
         connectNulls={true}
       />
     </Card>

@@ -44,7 +44,6 @@ export default function NetWorthCard(NetWorthCardProps: NetWorthCardProps) {
           categories={["Net Worth"]}
           colors={["green"]}
           yAxisWidth={30}
-          onValueChange={(v) => setValue(v)}
         />
       </Card>
     </>
