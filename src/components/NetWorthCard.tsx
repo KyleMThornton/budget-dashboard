@@ -1,5 +1,5 @@
 import { Card, Title, Text, LineChart } from "@tremor/react";
-import { useState } from "react";
+// import { useState } from "react";
 
 interface NetWorthCardProps {
   netWorth2023: number;
@@ -25,8 +25,7 @@ export default function NetWorthCard(NetWorthCardProps: NetWorthCardProps) {
     },
   ];
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [value, setValue] = useState(null);
+  // const [value, setValue] = useState(null);
 
   return (
     <>

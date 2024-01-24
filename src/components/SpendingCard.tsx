@@ -1,5 +1,5 @@
 import { Card, LineChart, Title } from "@tremor/react";
-import { useState } from "react";
+// import { useState } from "react";
 
 const chartdata2 = [
   {
@@ -40,8 +40,7 @@ const chartdata2 = [
 ];
 
 export default function SpendingCard() {
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  const [value, setValue] = useState(null);
+  // const [value, setValue] = useState(null);
 
   return (
     <Card

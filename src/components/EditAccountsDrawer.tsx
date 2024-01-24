@@ -12,38 +12,32 @@ import {
   Input,
   useDisclosure,
 } from "@chakra-ui/react";
-import React from "react";
 
 export default function EditAccountsDrawer() {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [checkingBalance, setcheckingBalance] = useState(100);
-  const [savingsBalance, setsavingsBalance] = useState(100);
-  const [creditCard1Balance, setcreditCard1Balance] = useState(100);
-  const [creditCard2Balance, setcreditCard2Balance] = useState(100);
-  const [mortgageBalance, setmortgageBalance] = useState(100);
-  const [investmentBalance, setinvestmentBalance] = useState(100);
-  const [retirementBalance, setretirementBalance] = useState(100);
-  const [homeValue, sethomeValue] = useState(100);
-  const [personalLoanBalance, setpersonalLoanBalance] = useState(100);
-  const [incomeBudgeted, setincomeBudgeted] = useState(100);
-  const [incomeActual, setincomeActual] = useState(100);
-  const [expensesBudgeted, setexpensesBudgeted] = useState(100);
-  const [expensesActual, setexpensesActual] = useState(100);
-  const btnRef = React.useRef();
+  // const [checkingBalance, setcheckingBalance] = useState(100);
+  // const [savingsBalance, setsavingsBalance] = useState(100);
+  // const [creditCard1Balance, setcreditCard1Balance] = useState(100);
+  // const [creditCard2Balance, setcreditCard2Balance] = useState(100);
+  // const [mortgageBalance, setmortgageBalance] = useState(100);
+  // const [investmentBalance, setinvestmentBalance] = useState(100);
+  // const [retirementBalance, setretirementBalance] = useState(100);
+  // const [homeValue, sethomeValue] = useState(100);
+  // const [personalLoanBalance, setpersonalLoanBalance] = useState(100);
+  // const [incomeBudgeted, setincomeBudgeted] = useState(100);
+  // const [incomeActual, setincomeActual] = useState(100);
+  // const [expensesBudgeted, setexpensesBudgeted] = useState(100);
+  // const [expensesActual, setexpensesActual] = useState(100);
+  // const btnRef = React.useRef();
 
   //   const handleAccountUpdates = () => {};
 
   return (
     <>
-      <Button ref={btnRef} colorScheme="teal" onClick={onOpen}>
+      <Button colorScheme="teal" onClick={onOpen}>
         Edit Accounts
       </Button>
-      <Drawer
-        isOpen={isOpen}
-        placement="left"
-        onClose={onClose}
-        finalFocusRef={btnRef}
-      >
+      <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
         <DrawerOverlay />
         <DrawerContent>
           <DrawerCloseButton />
