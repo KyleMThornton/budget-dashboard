@@ -42,7 +42,7 @@ export default function NetWorthCard(NetWorthCardProps: NetWorthCardProps) {
           index="year"
           categories={["Net Worth"]}
           colors={["green"]}
-          yAxisWidth={30}
+          yAxisWidth={60}
         />
       </Card>
     </>
