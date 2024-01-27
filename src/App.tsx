@@ -89,15 +89,6 @@ function App() {
         <div className="flex justify-center items-center">
           <div className="m-50 flex lg:flex-row flex-col">
             <div className="m-4">
-              <BudgetCard
-                incomeBudgeted={incomeBudgeted}
-                incomeActual={incomeActual}
-                expensesBudgeted={expensesBudgeted}
-                expensesActual={expensesActual}
-              />
-              <SpendingCard />
-            </div>
-            <div className="m-4">
               <AccountsCard
                 checkingBalance={checkingBalance}
                 savingsBalance={savingsBalance}
@@ -109,6 +100,15 @@ function App() {
                 homeValue={homeValue}
                 personalLoanBalance={personalLoanBalance}
               />
+            </div>
+            <div className="m-4">
+              <BudgetCard
+                incomeBudgeted={incomeBudgeted}
+                incomeActual={incomeActual}
+                expensesBudgeted={expensesBudgeted}
+                expensesActual={expensesActual}
+              />
+              <SpendingCard />
             </div>
             <div className="m-4">
               <NetWorthCard netWorth2023={netWorth2023} />
