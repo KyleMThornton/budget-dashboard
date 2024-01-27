@@ -4,6 +4,7 @@ import BudgetCard from "./components/BudgetCard";
 import Navbar from "./components/Navbar";
 import NetWorthCard from "./components/NetWorthCard";
 import SpendingCard from "./components/SpendingCard";
+import Footer from "./components/Footer";
 
 function App() {
   const [checkingBalance, setcheckingBalance] = useState(7500);
@@ -46,7 +47,7 @@ function App() {
   ]);
 
   return (
-    <main className="bg-slate-100 flex flex-col items-center">
+    <main className="bg-slate-100 flex flex-col items-center min-h-screen">
       <Navbar
         checkingBalance={checkingBalance}
         setCheckingBalance={setcheckingBalance}
@@ -104,6 +105,8 @@ function App() {
           </div>
         </div>
       </div>
+      <span className="flex-grow"></span>
+      <Footer />
     </main>
   );
 }
