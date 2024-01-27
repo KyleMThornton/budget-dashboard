@@ -27,6 +27,8 @@ interface NavbarProps {
   setexpensesBudgeted: (expensesBudgeted: number) => void;
   expensesActual: number;
   setexpensesActual: (expensesActual: number) => void;
+  darkMode: boolean;
+  setDarkMode: (darkMode: boolean) => void;
 }
 
 export default function Navbar({
@@ -56,9 +58,11 @@ export default function Navbar({
   setexpensesBudgeted,
   expensesActual,
   setexpensesActual,
+  darkMode,
+  setDarkMode,
 }: NavbarProps) {
   return (
-    <div className="w-screen bg-teal-500">
+    <div className="w-screen bg-teal-500 dark:bg-slate-900">
       <nav className="w-screen flex p-5 items-center text-white justify-between container md:px-20">
         <EditAccountsDrawer
           checkingBalance={checkingBalance}
@@ -87,6 +91,8 @@ export default function Navbar({
           setexpensesBudgeted={setexpensesBudgeted}
           expensesActual={expensesActual}
           setexpensesActual={setexpensesActual}
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
         />
         <span className="font-semibold text-xl tracking-tight">
           Budget Dashboard

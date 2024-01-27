@@ -7,6 +7,11 @@ import SpendingCard from "./components/SpendingCard";
 import Footer from "./components/Footer";
 
 function App() {
+  const [darkMode, setDarkMode] = useState(
+    window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+  );
+
   const [checkingBalance, setcheckingBalance] = useState(7500);
   const [savingsBalance, setsavingsBalance] = useState(12500);
   const [creditCard1Balance, setcreditCard1Balance] = useState(1200);
@@ -47,66 +52,72 @@ function App() {
   ]);
 
   return (
-    <main className="bg-slate-100 flex flex-col items-center min-h-screen">
-      <Navbar
-        checkingBalance={checkingBalance}
-        setCheckingBalance={setcheckingBalance}
-        savingsBalance={savingsBalance}
-        setsavingsBalance={setsavingsBalance}
-        creditCard1Balance={creditCard1Balance}
-        setcreditCard1Balance={setcreditCard1Balance}
-        creditCard2Balance={creditCard2Balance}
-        setcreditCard2Balance={setcreditCard2Balance}
-        mortgageBalance={mortgageBalance}
-        setmortgageBalance={setmortgageBalance}
-        investmentBalance={investmentBalance}
-        setinvestmentBalance={setinvestmentBalance}
-        retirementBalance={retirementBalance}
-        setretirementBalance={setretirementBalance}
-        homeValue={homeValue}
-        sethomeValue={sethomeValue}
-        personalLoanBalance={personalLoanBalance}
-        setpersonalLoanBalance={setpersonalLoanBalance}
-        incomeBudgeted={incomeBudgeted}
-        setincomeBudgeted={setincomeBudgeted}
-        incomeActual={incomeActual}
-        setincomeActual={setincomeActual}
-        expensesBudgeted={expensesBudgeted}
-        setexpensesBudgeted={setexpensesBudgeted}
-        expensesActual={expensesActual}
-        setexpensesActual={setexpensesActual}
-      />
-      <div className="flex justify-center items-center">
-        <div className="m-50 flex lg:flex-row flex-col">
-          <div className="m-4">
-            <BudgetCard
-              incomeBudgeted={incomeBudgeted}
-              incomeActual={incomeActual}
-              expensesBudgeted={expensesBudgeted}
-              expensesActual={expensesActual}
-            />
-            <SpendingCard />
-          </div>
-          <div className="m-4">
-            <AccountsCard
-              checkingBalance={checkingBalance}
-              savingsBalance={savingsBalance}
-              creditCard1Balance={creditCard1Balance}
-              creditCard2Balance={creditCard2Balance}
-              mortgageBalance={mortgageBalance}
-              investmentBalance={investmentBalance}
-              retirementBalance={retirementBalance}
-              homeValue={homeValue}
-              personalLoanBalance={personalLoanBalance}
-            />
-          </div>
-          <div className="m-4">
-            <NetWorthCard netWorth2023={netWorth2023} />
+    <main className={darkMode ? "dark" : ""}>
+      <div
+        className={`bg-slate-100 dark:bg-slate-800 flex flex-col items-center min-h-screen`}
+      >
+        <Navbar
+          checkingBalance={checkingBalance}
+          setCheckingBalance={setcheckingBalance}
+          savingsBalance={savingsBalance}
+          setsavingsBalance={setsavingsBalance}
+          creditCard1Balance={creditCard1Balance}
+          setcreditCard1Balance={setcreditCard1Balance}
+          creditCard2Balance={creditCard2Balance}
+          setcreditCard2Balance={setcreditCard2Balance}
+          mortgageBalance={mortgageBalance}
+          setmortgageBalance={setmortgageBalance}
+          investmentBalance={investmentBalance}
+          setinvestmentBalance={setinvestmentBalance}
+          retirementBalance={retirementBalance}
+          setretirementBalance={setretirementBalance}
+          homeValue={homeValue}
+          sethomeValue={sethomeValue}
+          personalLoanBalance={personalLoanBalance}
+          setpersonalLoanBalance={setpersonalLoanBalance}
+          incomeBudgeted={incomeBudgeted}
+          setincomeBudgeted={setincomeBudgeted}
+          incomeActual={incomeActual}
+          setincomeActual={setincomeActual}
+          expensesBudgeted={expensesBudgeted}
+          setexpensesBudgeted={setexpensesBudgeted}
+          expensesActual={expensesActual}
+          setexpensesActual={setexpensesActual}
+          darkMode={darkMode}
+          setDarkMode={setDarkMode}
+        />
+        <div className="flex justify-center items-center">
+          <div className="m-50 flex lg:flex-row flex-col">
+            <div className="m-4">
+              <BudgetCard
+                incomeBudgeted={incomeBudgeted}
+                incomeActual={incomeActual}
+                expensesBudgeted={expensesBudgeted}
+                expensesActual={expensesActual}
+              />
+              <SpendingCard />
+            </div>
+            <div className="m-4">
+              <AccountsCard
+                checkingBalance={checkingBalance}
+                savingsBalance={savingsBalance}
+                creditCard1Balance={creditCard1Balance}
+                creditCard2Balance={creditCard2Balance}
+                mortgageBalance={mortgageBalance}
+                investmentBalance={investmentBalance}
+                retirementBalance={retirementBalance}
+                homeValue={homeValue}
+                personalLoanBalance={personalLoanBalance}
+              />
+            </div>
+            <div className="m-4">
+              <NetWorthCard netWorth2023={netWorth2023} />
+            </div>
           </div>
         </div>
+        <span className="flex-grow"></span>
+        <Footer />
       </div>
-      <span className="flex-grow"></span>
-      <Footer />
     </main>
   );
 }

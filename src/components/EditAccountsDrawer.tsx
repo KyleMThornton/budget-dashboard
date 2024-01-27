@@ -11,7 +11,10 @@ import {
   FormLabel,
   Input,
   useDisclosure,
+  useColorMode,
 } from "@chakra-ui/react";
+
+import { MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 import { useState } from "react";
 
@@ -42,6 +45,8 @@ interface EditAccountsDrawerProps {
   setexpensesBudgeted: (expensesBudgeted: number) => void;
   expensesActual: number;
   setexpensesActual: (expensesActual: number) => void;
+  darkMode: boolean;
+  setDarkMode: (darkMode: boolean) => void;
 }
 
 export default function EditAccountsDrawer({
@@ -71,8 +76,11 @@ export default function EditAccountsDrawer({
   setexpensesBudgeted,
   expensesActual,
   setexpensesActual,
+  darkMode,
+  setDarkMode,
 }: EditAccountsDrawerProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const { toggleColorMode } = useColorMode();
 
   const [checkingInput, setCheckingInput] = useState(checkingBalance);
   const [savingsInput, setSavingsInput] = useState(savingsBalance);
@@ -91,7 +99,10 @@ export default function EditAccountsDrawer({
   const [expensesActualInput, setExpensesActualInput] =
     useState(expensesActual);
 
-  // const btnRef = React.useRef();
+  const themeToggle = () => {
+    darkMode ? setDarkMode(false) : setDarkMode(true);
+    toggleColorMode();
+  };
 
   const handleButtonClick = () => {
     if (checkingInput) {
@@ -138,7 +149,7 @@ export default function EditAccountsDrawer({
 
   return (
     <>
-      <Button colorScheme="teal" onClick={onOpen}>
+      <Button colorScheme={darkMode ? "facebook" : "teal"} onClick={onOpen}>
         Edit Accounts
       </Button>
       <Drawer isOpen={isOpen} placement="left" onClose={onClose}>
@@ -270,6 +281,9 @@ export default function EditAccountsDrawer({
           </DrawerBody>
 
           <DrawerFooter>
+            <Button mr={3} onClick={themeToggle}>
+              {darkMode ? <SunIcon /> : <MoonIcon />}
+            </Button>
             <Button variant="outline" mr={3} onClick={onClose}>
               Cancel
             </Button>
