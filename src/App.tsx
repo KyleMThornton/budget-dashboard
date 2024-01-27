@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import AccountsCard from "./components/AccountsCard";
 import BudgetCard from "./components/BudgetCard";
 import Navbar from "./components/Navbar";
@@ -6,41 +6,75 @@ import NetWorthCard from "./components/NetWorthCard";
 import SpendingCard from "./components/SpendingCard";
 
 function App() {
-  const [checkingBalance, setcheckingBalance] = useState(100);
-  const [savingsBalance, setsavingsBalance] = useState(100);
-  const [creditCard1Balance, setcreditCard1Balance] = useState(100);
-  const [creditCard2Balance, setcreditCard2Balance] = useState(100);
-  const [mortgageBalance, setmortgageBalance] = useState(100);
-  const [investmentBalance, setinvestmentBalance] = useState(100);
-  const [retirementBalance, setretirementBalance] = useState(100);
-  const [homeValue, sethomeValue] = useState(100);
-  const [personalLoanBalance, setpersonalLoanBalance] = useState(100);
-  const [incomeBudgeted, setincomeBudgeted] = useState(100);
-  const [incomeActual, setincomeActual] = useState(100);
-  const [expensesBudgeted, setexpensesBudgeted] = useState(100);
-  const [expensesActual, setexpensesActual] = useState(100);
+  const [checkingBalance, setcheckingBalance] = useState(7500);
+  const [savingsBalance, setsavingsBalance] = useState(12500);
+  const [creditCard1Balance, setcreditCard1Balance] = useState(1200);
+  const [creditCard2Balance, setcreditCard2Balance] = useState(750);
+  const [mortgageBalance, setmortgageBalance] = useState(250000);
+  const [investmentBalance, setinvestmentBalance] = useState(75000);
+  const [retirementBalance, setretirementBalance] = useState(88000);
+  const [homeValue, sethomeValue] = useState(352000);
+  const [personalLoanBalance, setpersonalLoanBalance] = useState(7250);
+  const [incomeBudgeted, setincomeBudgeted] = useState(79000);
+  const [incomeActual, setincomeActual] = useState(77000);
+  const [expensesBudgeted, setexpensesBudgeted] = useState(74000);
+  const [expensesActual, setexpensesActual] = useState(58000);
   const [netWorth2023, setnetWorth2023] = useState(150000);
 
-  const handleAccountUpdates = () => {
-    setcheckingBalance(100);
-    setsavingsBalance(100);
-    setcreditCard1Balance(100);
-    setcreditCard2Balance(100);
-    setmortgageBalance(100);
-    setinvestmentBalance(100);
-    setretirementBalance(100);
-    sethomeValue(100);
-    setpersonalLoanBalance(100);
-    setincomeBudgeted(100);
-    setincomeActual(100);
-    setexpensesBudgeted(100);
-    setexpensesActual(100);
-    setnetWorth2023(150000);
-  };
+  useEffect(() => {
+    const netWorth =
+      checkingBalance +
+      savingsBalance -
+      creditCard1Balance -
+      creditCard2Balance -
+      mortgageBalance +
+      investmentBalance +
+      retirementBalance +
+      homeValue -
+      personalLoanBalance;
+    setnetWorth2023(netWorth);
+  }, [
+    checkingBalance,
+    savingsBalance,
+    creditCard1Balance,
+    creditCard2Balance,
+    mortgageBalance,
+    investmentBalance,
+    retirementBalance,
+    homeValue,
+    personalLoanBalance,
+  ]);
 
   return (
     <main className="bg-slate-100 flex flex-col items-center">
-      <Navbar />
+      <Navbar
+        checkingBalance={checkingBalance}
+        setCheckingBalance={setcheckingBalance}
+        savingsBalance={savingsBalance}
+        setsavingsBalance={setsavingsBalance}
+        creditCard1Balance={creditCard1Balance}
+        setcreditCard1Balance={setcreditCard1Balance}
+        creditCard2Balance={creditCard2Balance}
+        setcreditCard2Balance={setcreditCard2Balance}
+        mortgageBalance={mortgageBalance}
+        setmortgageBalance={setmortgageBalance}
+        investmentBalance={investmentBalance}
+        setinvestmentBalance={setinvestmentBalance}
+        retirementBalance={retirementBalance}
+        setretirementBalance={setretirementBalance}
+        homeValue={homeValue}
+        sethomeValue={sethomeValue}
+        personalLoanBalance={personalLoanBalance}
+        setpersonalLoanBalance={setpersonalLoanBalance}
+        incomeBudgeted={incomeBudgeted}
+        setincomeBudgeted={setincomeBudgeted}
+        incomeActual={incomeActual}
+        setincomeActual={setincomeActual}
+        expensesBudgeted={expensesBudgeted}
+        setexpensesBudgeted={setexpensesBudgeted}
+        expensesActual={expensesActual}
+        setexpensesActual={setexpensesActual}
+      />
       <div className="flex justify-center items-center">
         <div className="m-50 flex lg:flex-row flex-col">
           <div className="m-4">
@@ -70,12 +104,6 @@ function App() {
           </div>
         </div>
       </div>
-      <button
-        onClick={handleAccountUpdates}
-        className="opacity-0 cursor-default"
-      >
-        Update Accounts
-      </button>
     </main>
   );
 }
