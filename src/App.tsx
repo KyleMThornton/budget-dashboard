@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import NetWorthCard from "./components/NetWorthCard";
 import SpendingCard from "./components/SpendingCard";
 import Footer from "./components/Footer";
+import SpendingPieChart from "./components/SpendingPieChart";
 
 function App() {
   const [darkMode, setDarkMode] = useState(
@@ -89,15 +90,6 @@ function App() {
         <div className="flex justify-center items-center">
           <div className="m-50 flex lg:flex-row flex-col">
             <div className="m-4">
-              <BudgetCard
-                incomeBudgeted={incomeBudgeted}
-                incomeActual={incomeActual}
-                expensesBudgeted={expensesBudgeted}
-                expensesActual={expensesActual}
-              />
-              <SpendingCard />
-            </div>
-            <div className="m-4">
               <AccountsCard
                 checkingBalance={checkingBalance}
                 savingsBalance={savingsBalance}
@@ -111,7 +103,17 @@ function App() {
               />
             </div>
             <div className="m-4">
+              <BudgetCard
+                incomeBudgeted={incomeBudgeted}
+                incomeActual={incomeActual}
+                expensesBudgeted={expensesBudgeted}
+                expensesActual={expensesActual}
+              />
+              <SpendingCard />
+            </div>
+            <div className="m-4">
               <NetWorthCard netWorth2023={netWorth2023} />
+              <SpendingPieChart />
             </div>
           </div>
         </div>
