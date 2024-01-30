@@ -7,7 +7,7 @@ import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <ChakraProvider>
-      <ColorModeScript initialColorMode="system" />
+      <ColorModeScript initialColorMode={"system"} />
       <App />
     </ChakraProvider>
   </React.StrictMode>

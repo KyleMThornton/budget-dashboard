@@ -8,10 +8,17 @@ import Footer from "./components/Footer";
 import SpendingPieChart from "./components/SpendingPieChart";
 
 function App() {
-  const [darkMode, setDarkMode] = useState(
-    window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches
-  );
+  const [darkMode, setDarkMode] = useState(() => {
+    const storedDarkMode = localStorage.getItem("darkMode");
+    return storedDarkMode !== null
+      ? JSON.parse(storedDarkMode)
+      : window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("darkMode", JSON.stringify(darkMode));
+  }, [darkMode]);
 
   const [checkingBalance, setcheckingBalance] = useState(7500);
   const [savingsBalance, setsavingsBalance] = useState(12500);
