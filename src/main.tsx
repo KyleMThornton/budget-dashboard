@@ -13,8 +13,8 @@ const theme = extendTheme({ config });
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <ColorModeScript initialColorMode="system" />
-    <ChakraProvider theme={theme}>
+    <ChakraProvider>
+      <ColorModeScript initialColorMode="system" />
       <App />
     </ChakraProvider>
   </React.StrictMode>
