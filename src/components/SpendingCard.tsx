@@ -1,5 +1,4 @@
 import { Card, LineChart, Title } from "@tremor/react";
-// import { useState } from "react";
 
 const chartdata2 = [
   {
@@ -40,8 +39,6 @@ const chartdata2 = [
 ];
 
 export default function SpendingCard() {
-  // const [value, setValue] = useState(null);
-
   return (
     <Card
       className="max-w-lg mx-auto m-1 mt-3"
