@@ -1,5 +1,4 @@
 import { Card, Title, Text, LineChart } from "@tremor/react";
-// import { useState } from "react";
 
 interface NetWorthCardProps {
   netWorth2023: number;
@@ -24,8 +23,6 @@ export default function NetWorthCard(NetWorthCardProps: NetWorthCardProps) {
       "Net Worth": NetWorthCardProps.netWorth2023,
     },
   ];
-
-  // const [value, setValue] = useState(null);
 
   return (
     <>
