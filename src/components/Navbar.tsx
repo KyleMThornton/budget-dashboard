@@ -62,7 +62,7 @@ export default function Navbar({
   setDarkMode,
 }: NavbarProps) {
   return (
-    <div className="w-screen bg-teal-500 dark:bg-slate-900">
+    <div className="w-screen bg-teal-500 dark:bg-slate-900 sticky sm:static top-0 z-10">
       <nav className="w-screen flex p-5 items-center text-white justify-between container md:px-20">
         <EditAccountsDrawer
           checkingBalance={checkingBalance}
